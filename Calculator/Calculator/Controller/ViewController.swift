@@ -12,10 +12,25 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setValueOnNumberButton()
     }
     
     @IBOutlet var numberButtons: [NumberButton]!
     @IBOutlet var operatorButtons: [OperatorButton]!
+    
+    @IBOutlet weak var numberCompositionLabel: UILabel!
+    @IBOutlet weak var operatorSettingLabel: UILabel!
+    
+    @IBAction func clickNumber(_ sender: NumberButton) {
+        if numberCompositionLabel.text == "0" {
+            numberCompositionLabel.text = sender.number
+        } else {
+            
+        }
+        
+    }
+    
     
 }
 
