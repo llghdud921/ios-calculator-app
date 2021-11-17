@@ -283,7 +283,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="clickNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9km-AZ-Fwc"/>
+                                                    <action selector="clickPointButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UU0-Ia-PJi"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Daw-iX-Owl">
@@ -344,7 +344,6 @@
                         <outlet property="operatorSettingLabel" destination="HPC-iy-qdm" id="Nz3-Ja-WTi"/>
                         <outletCollection property="numberButtons" destination="mSz-Y3-r5Z" collectionClass="NSMutableArray" id="5Z4-DC-VBw"/>
                         <outletCollection property="numberButtons" destination="sH6-8l-kje" collectionClass="NSMutableArray" id="nBR-PO-4Iw"/>
-                        <outletCollection property="numberButtons" destination="h8q-5h-bnb" collectionClass="NSMutableArray" id="i7h-41-jzV"/>
                         <outletCollection property="numberButtons" destination="nCE-qB-NiN" collectionClass="NSMutableArray" id="st6-LW-SLc"/>
                         <outletCollection property="numberButtons" destination="Rif-2S-UU2" collectionClass="NSMutableArray" id="oDS-yc-0LY"/>
                         <outletCollection property="numberButtons" destination="X8H-iH-tSd" collectionClass="NSMutableArray" id="FK7-Rt-aGA"/>
@@ -355,6 +354,7 @@
                         <outletCollection property="numberButtons" destination="xgT-2D-A49" collectionClass="NSMutableArray" id="Y1B-R6-d43"/>
                         <outletCollection property="numberButtons" destination="zcj-xJ-ruw" collectionClass="NSMutableArray" id="WKZ-rX-YWF"/>
                         <outletCollection property="operatorButtons" destination="Tfz-eM-jll" collectionClass="NSMutableArray" id="p2Y-xo-Vqh"/>
+                        <outletCollection property="numberButtons" destination="h8q-5h-bnb" collectionClass="NSMutableArray" id="x5f-9a-MoP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

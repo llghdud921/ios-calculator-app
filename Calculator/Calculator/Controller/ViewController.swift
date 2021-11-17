@@ -41,21 +41,30 @@ class ViewController: UIViewController {
                 return
             }
             
-            // Number -> String
-            let stringValue = numberValue.stringValue + clickedNumber
-            
             // String -> Number
-            guard let nsnumberValue = numberFormatter.number(from: stringValue) else {
+            guard let nsnumberValue = numberFormatter.number(from: "0") else {
                 return
             }
             
             // String
             numberCompositionLabel.text = numberFormatter.string(from: nsnumberValue)
         }
-        
     }
     
-    
+    @IBAction func clickPointButton(_ sender: NumberButton) {
+        let numberFormatter = NumberFormatter()
+        
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumIntegerDigits = 20
+        
+        //String
+        guard let numberStringOfLabel = numberCompositionLabel.text _else {
+            return
+        }
+        
+        // String
+        numberCompositionLabel.text = numberStringOfLabel + "."
+    }
 }
 
 // MARK: - internal method
