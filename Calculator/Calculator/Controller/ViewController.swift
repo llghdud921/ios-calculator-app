@@ -23,10 +23,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var operatorSettingLabel: UILabel!
     
     @IBAction func clickNumber(_ sender: NumberButton) {
+        let numberFormatter = NumberFormatter()
+        
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumIntegerDigits = 20
+        
         if numberCompositionLabel.text == "0" {
             numberCompositionLabel.text = sender.number
         } else {
+            // String
+            guard let numberStringOfLabel = numberCompositionLabel.text, let clickedNumber = sender.number else {
+                return
+            }
             
+            // String -> Number
+            guard let numberValue = numberFormatter.number(from: numberStringOfLabel) else {
+                return
+            }
+            
+            // Number -> String
+            let stringValue = numberValue.stringValue + clickedNumber
+            
+            // String -> Number
+            guard let nsnumberValue = numberFormatter.number(from: stringValue) else {
+                return
+            }
+            
+            // String
+            numberCompositionLabel.text = numberFormatter.string(from: nsnumberValue)
         }
         
     }
