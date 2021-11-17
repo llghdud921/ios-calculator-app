@@ -33,6 +33,14 @@ class FormulaTests: XCTestCase {
     func test_formula내_0으로나누는_연산이_포함되는_계산식은_nan결과를_나타낸다() {
         formula = ExpressionParser.parse(from: "-1/0.0")
         
+        func po(lhs: Int, rhs: Int) -> Double {
+            let decimalResult: Float = pow(10.0, -2.0)
+            print(decimalResult)
+            let result = Double(decimalResult)
+            return result
+        }
+        print(po(lhs: 10, rhs: -2))
+        
         XCTAssertTrue(formula.result().isNaN)
     }
 }

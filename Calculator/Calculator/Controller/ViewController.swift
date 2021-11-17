@@ -28,12 +28,28 @@ class ViewController: UIViewController {
         numberFormatter.numberStyle = .decimal
         numberFormatter.maximumIntegerDigits = 20
         
+        var digit = 0
+        
         if numberCompositionLabel.text == "0" {
             numberCompositionLabel.text = sender.number
         } else {
             // String
-            guard let numberStringOfLabel = numberCompositionLabel.text, let clickedNumber = sender.number else {
+            guard var numberStringOfLabel = numberCompositionLabel.text else {
                 return
+            }
+            
+            guard let clickedNumber = sender.number, let clickedValue = Int(clickedNumber) else {
+                return
+            }
+            
+            if numberStringOfLabel.contains(".") {
+                if numberStringOfLabel.hasSuffix(".") {
+                    numberStringOfLabel.removeLast()
+                    digit = -1
+                } else {
+                    let splitedNumber = numberStringOfLabel.split(separator: ".")
+                    digit = ( splitedNumber[1].count * -1 ) - 1
+                }
             }
             
             // String -> Number
@@ -41,13 +57,15 @@ class ViewController: UIViewController {
                 return
             }
             
-            // String -> Number
-            guard let nsnumberValue = numberFormatter.number(from: "0") else {
-                return
+            var compositedValue: Double = Double.zero
+            
+            if digit < 0 {
+                compositedValue = Double(truncating: numberValue) + Double(clickedValue) * (10 ** digit)
+            } else {
+                compositedValue = Double(truncating: numberValue) * 10 + Double(clickedValue)
             }
             
-            // String
-            numberCompositionLabel.text = numberFormatter.string(from: nsnumberValue)
+            numberCompositionLabel.text = numberFormatter.string(from: NSNumber(value: compositedValue))
         }
     }
     
@@ -58,7 +76,7 @@ class ViewController: UIViewController {
         numberFormatter.maximumIntegerDigits = 20
         
         //String
-        guard let numberStringOfLabel = numberCompositionLabel.text _else {
+        guard let numberStringOfLabel = numberCompositionLabel.text else {
             return
         }
         
