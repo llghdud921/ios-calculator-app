@@ -18,6 +18,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var numberCompositionLabel: UILabel!
     @IBOutlet weak var operatorSettingLabel: UILabel!
     
+    @IBAction func clickOperator(_ sender: UIButton) {
+        guard let operatorOfButton = sender.titleLabel?.text else {
+            return
+        }
+        operatorSettingLabel.text = operatorOfButton
+    }
+    
+    
     @IBAction func changeNumberSign(_ sender: UIButton) {
         guard var numberOfLabel = numberCompositionLabel.text else {
             return
