@@ -33,14 +33,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clickNumber(_ sender: UIButton) {
-        guard let numberOfLabel = numberCompositionLabel.text else {
+        guard let numberOfLabel = numberCompositionLabel.text, let numberOfButton = sender.titleLabel?.text else {
             return
         }
-        
-        guard let numberOfButton = sender.titleLabel?.text else {
-            return
-        }
-        
+    
         if numberOfLabel == "0" {
             numberCompositionLabel.text = numberOfButton
         } else {
