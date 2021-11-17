@@ -17,6 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet var numberButtons: [NumberButton]!
     @IBOutlet var operatorButtons: [OperatorButton]!
     
+}
+
+// MARK: - internal method
+
+extension ViewController {
     func setValueOnNumberButton() {
         numberButtons.forEach { $0.number = $0.titleLabel?.text }
     }
