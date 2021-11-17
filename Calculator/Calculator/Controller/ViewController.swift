@@ -16,11 +16,27 @@ class ViewController: UIViewController {
         setValueOnNumberButton()
     }
     
+    // MARK: property
     @IBOutlet var numberButtons: [NumberButton]!
     @IBOutlet var operatorButtons: [OperatorButton]!
     
     @IBOutlet weak var numberCompositionLabel: UILabel!
     @IBOutlet weak var operatorSettingLabel: UILabel!
+    
+    @IBAction func changeNumberSign(_ sender: Any) {
+        guard var numberOfLabel = numberCompositionLabel.text else {
+            return
+        }
+        
+        if numberOfLabel.hasPrefix("-") {
+            numberOfLabel.removeFirst()
+        } else {
+            numberOfLabel = "-" + numberOfLabel
+        }
+        
+        numberCompositionLabel.text = numberOfLabel
+    }
+    
     
     @IBAction func clickNumber(_ sender: NumberButton) {
         
