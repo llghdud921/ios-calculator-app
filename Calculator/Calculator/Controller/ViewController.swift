@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet var numberButtons: [NumberButton]!
-
+    @IBOutlet var operatorButtons: [OperatorButton]!
+    
 }
 
