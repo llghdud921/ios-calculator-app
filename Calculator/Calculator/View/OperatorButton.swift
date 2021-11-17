@@ -8,5 +8,5 @@
 import UIKit
 
 class OperatorButton: UIButton {
-    var `operator`: Character?
+    var `operator`: String?
 }

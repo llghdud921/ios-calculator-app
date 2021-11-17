@@ -17,5 +17,12 @@ class ViewController: UIViewController {
     @IBOutlet var numberButtons: [NumberButton]!
     @IBOutlet var operatorButtons: [OperatorButton]!
     
+    func setValueOnNumberButton() {
+        numberButtons.forEach { $0.number = $0.titleLabel?.text }
+    }
+    
+    func setValueOnOperatorButton() {
+        operatorButtons.forEach { $0.operator = $0.titleLabel?.text }
+    }
 }
 

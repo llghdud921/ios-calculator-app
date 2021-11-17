@@ -8,5 +8,5 @@
 import UIKit
 
 class NumberButton: UIButton {
-    var number: Int?
+    var number: String?
 }
