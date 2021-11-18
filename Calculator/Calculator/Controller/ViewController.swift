@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         numberCompositionLabel.text = "0"
     }
     
-    
     @IBAction func clickOperator(_ sender: UIButton) {
         guard let operatorOfButton = sender.titleLabel?.text else {
             return
@@ -44,6 +43,18 @@ class ViewController: UIViewController {
         numberCompositionLabel.text = numberOfLabel
     }
     
+    @IBAction func clickPointNumber(_ sender: UIButton) {
+        guard let numberOfLabel = numberCompositionLabel.text, let point = sender.titleLabel?.text else {
+            return
+        }
+        
+        if numberOfLabel.contains(point) {
+            return
+        }
+        
+        numberCompositionLabel.text = numberOfLabel + point
+    }
+    
     @IBAction func clickNumber(_ sender: UIButton) {
         guard let numberOfLabel = numberCompositionLabel.text, let numberOfButton = sender.titleLabel?.text else {
             return
@@ -55,7 +66,4 @@ class ViewController: UIViewController {
             numberCompositionLabel.text = numberOfLabel + numberOfButton
         }
     }
-    
 }
-
-
